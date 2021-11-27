@@ -53,6 +53,7 @@ namespace PizzaProject
             this.label2.Size = new System.Drawing.Size(187, 117);
             this.label2.TabIndex = 1;
             this.label2.Text = resources.GetString("label2.Text");
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
@@ -71,6 +72,7 @@ namespace PizzaProject
             this.button2.TabIndex = 3;
             this.button2.Text = "Confirm";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // checkout
             // 

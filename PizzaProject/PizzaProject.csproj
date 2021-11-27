@@ -64,6 +64,7 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuItem.cs" />
     <Compile Include="pizzaOrder.cs">
       <SubType>Form</SubType>
     </Compile>

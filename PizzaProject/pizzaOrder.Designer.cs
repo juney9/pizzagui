@@ -53,6 +53,7 @@ namespace PizzaProject
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@ namespace PizzaProject
             this.Carbutton.TabIndex = 1;
             this.Carbutton.Text = "Add To Cart";
             this.Carbutton.UseVisualStyleBackColor = true;
+            this.Carbutton.Click += new System.EventHandler(this.Carbutton_Click);
             // 
             // label1
             // 
@@ -94,6 +96,7 @@ namespace PizzaProject
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Pan";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.CrustButton_Changed);
             // 
             // radioButton7
             // 
@@ -105,6 +108,7 @@ namespace PizzaProject
             this.radioButton7.TabStop = true;
             this.radioButton7.Text = "Regular";
             this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.CrustButton_Changed);
             // 
             // radioButton8
             // 
@@ -116,6 +120,7 @@ namespace PizzaProject
             this.radioButton8.TabStop = true;
             this.radioButton8.Text = "Thin";
             this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton8.CheckedChanged += new System.EventHandler(this.CrustButton_Changed);
             // 
             // radioButton4
             // 
@@ -127,6 +132,7 @@ namespace PizzaProject
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "X-Large";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.PizzaSizeButton_Changed);
             // 
             // radioButton3
             // 
@@ -138,6 +144,7 @@ namespace PizzaProject
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Large";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.PizzaSizeButton_Changed);
             // 
             // radioButton2
             // 
@@ -149,6 +156,7 @@ namespace PizzaProject
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Medium";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.PizzaSizeButton_Changed);
             // 
             // radioButton1
             // 
@@ -158,8 +166,10 @@ namespace PizzaProject
             this.radioButton1.Size = new System.Drawing.Size(50, 17);
             this.radioButton1.TabIndex = 12;
             this.radioButton1.TabStop = true;
+            this.radioButton1.Tag = "";
             this.radioButton1.Text = "Small";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.PizzaSizeButton_Changed);
             // 
             // panel1
             // 
@@ -171,6 +181,7 @@ namespace PizzaProject
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(545, 41);
             this.panel1.TabIndex = 16;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -191,7 +202,7 @@ namespace PizzaProject
             this.checkBox1.TabIndex = 18;
             this.checkBox1.Text = "Pepperoni";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.ToppingsChanged);
             // 
             // checkBox2
             // 
@@ -202,6 +213,7 @@ namespace PizzaProject
             this.checkBox2.TabIndex = 19;
             this.checkBox2.Text = "Sausage";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.ToppingsChanged);
             // 
             // checkBox3
             // 
@@ -212,6 +224,7 @@ namespace PizzaProject
             this.checkBox3.TabIndex = 20;
             this.checkBox3.Text = "Ham";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.ToppingsChanged);
             // 
             // checkBox4
             // 
@@ -222,6 +235,7 @@ namespace PizzaProject
             this.checkBox4.TabIndex = 21;
             this.checkBox4.Text = "Green Peppers";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.ToppingsChanged);
             // 
             // checkBox5
             // 
@@ -232,6 +246,7 @@ namespace PizzaProject
             this.checkBox5.TabIndex = 22;
             this.checkBox5.Text = "Onions";
             this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.ToppingsChanged);
             // 
             // checkBox6
             // 
@@ -242,6 +257,7 @@ namespace PizzaProject
             this.checkBox6.TabIndex = 23;
             this.checkBox6.Text = "Pineapple";
             this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.ToppingsChanged);
             // 
             // checkBox7
             // 
@@ -252,6 +268,7 @@ namespace PizzaProject
             this.checkBox7.TabIndex = 24;
             this.checkBox7.Text = "Mushroom";
             this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.ToppingsChanged);
             // 
             // checkBox8
             // 
@@ -262,6 +279,7 @@ namespace PizzaProject
             this.checkBox8.TabIndex = 25;
             this.checkBox8.Text = "Tomato";
             this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox8.CheckedChanged += new System.EventHandler(this.ToppingsChanged);
             // 
             // label3
             // 
@@ -290,12 +308,21 @@ namespace PizzaProject
             this.button2.Text = "Next";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(657, 81);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
+            this.richTextBox1.TabIndex = 29;
+            this.richTextBox1.Text = "";
+            // 
             // pizzaOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(778, 673);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -349,5 +376,6 @@ namespace PizzaProject
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

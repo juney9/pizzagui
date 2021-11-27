@@ -8,6 +8,7 @@ namespace PizzaProject
 {
     static class Program
     {
+        public static List<MenuItem> CartItems = new List<MenuItem>();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

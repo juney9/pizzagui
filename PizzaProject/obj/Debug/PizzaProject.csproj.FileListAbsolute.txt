@@ -1,0 +1,13 @@
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\bin\Debug\PizzaProject.exe.config
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\bin\Debug\PizzaProject.exe
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\bin\Debug\PizzaProject.pdb
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.csproj.AssemblyReference.cache
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.beverageOrder.resources
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.login.resources
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.pizzaOrder.resources
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.Properties.Resources.resources
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.csproj.GenerateResource.cache
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.csproj.CoreCompileInputs.cache
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.exe
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.pdb

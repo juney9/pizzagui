@@ -11,3 +11,5 @@ C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.c
 C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.csproj.CoreCompileInputs.cache
 C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.exe
 C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.pdb
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.checkout.resources
+C:\Users\June\Source\Repos\juney9\pizzagui\PizzaProject\obj\Debug\PizzaProject.receipt.resources

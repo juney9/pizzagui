@@ -18,6 +18,11 @@ namespace PizzaProject
         private double totalPrice = 0;
         private CrustChoice crustSelected;
         private Dictionary<string, bool> dictToppings = new Dictionary<string, bool>();
+        private List<MenuItem> beverages = new List<MenuItem>();
+        private int cookieCount = 0;
+        private int breadStickCount = 0;
+        private int breadStickBiteCount = 0;
+
         public pizzaOrder()
         {
             InitializeComponent();
@@ -46,10 +51,10 @@ namespace PizzaProject
             calculatePrice();         
         }
 
-        private void Carbutton_Click(object sender, EventArgs e)
+        private void AddPizza_Click(object sender, EventArgs e)
         {
-            Program.CartItems.Add(new MenuItem(1,totalPrice,"Pizza", pizzaSelected, crustSelected));
-            richTextBox1.AppendText("Pizza \t " + (totalPrice.ToString()) + "\n" );
+            Program.CartItems.Add(new MenuItem(1,totalPrice,"Pizza " + crustSelected.ToString(), pizzaSelected));
+            richTextBox1.AppendText($"Pizza {pizzaSelected.ToString()} {crustSelected.ToString()} \t ${totalPrice.ToString()} \n" );
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -115,6 +120,122 @@ namespace PizzaProject
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BeverageSmall_ValueChanged(object sender, EventArgs e)
+        {
+            var count = ((int)(sender as NumericUpDown).Value);
+
+            var item = beverages.Where(b => b.ItemName == (sender as NumericUpDown).Tag as string && b.ItemSize == ItemSize.Small).FirstOrDefault();
+            if (item == null)
+            {
+                beverages.Add(new MenuItem(count, Properties.Settings.Default.BeveragePrice, (sender as NumericUpDown).Tag as string,
+                    ItemSize.Small));
+            }
+            else
+            {
+                if (count == 0)
+                {
+                    beverages.Remove(item);
+                }
+                else
+                {
+                    item.ItemAmount = count;
+                }
+            }
+        }
+
+        private void BeverageMedium_ValueChanged(object sender, EventArgs e)
+        {
+            var count = ((int)(sender as NumericUpDown).Value);
+
+            var item = beverages.Where(b => b.ItemName == (sender as NumericUpDown).Tag as string && b.ItemSize == ItemSize.Medium).FirstOrDefault();
+            if (item == null)
+            {
+                beverages.Add(new MenuItem(count, Properties.Settings.Default.BeveragePrice, (sender as NumericUpDown).Tag as string,
+                    ItemSize.Medium));
+            }
+            else
+            {
+                if (count == 0)
+                {
+                    beverages.Remove(item);
+                }
+                else
+                {
+                    item.ItemAmount = count;
+                }
+            }
+        }
+
+        private void BeverageLarge_ValueChanged(object sender, EventArgs e)
+        {
+            var count = ((int)(sender as NumericUpDown).Value);
+
+            var item = beverages.Where(b => b.ItemName == (sender as NumericUpDown).Tag as string && b.ItemSize == ItemSize.Large).FirstOrDefault();
+            if (item == null)
+            {
+                beverages.Add(new MenuItem(count, Properties.Settings.Default.BeveragePrice, (sender as NumericUpDown).Tag as string,
+                    ItemSize.Large));
+            }
+            else
+            {
+                if (count == 0)
+                {
+                    beverages.Remove(item);
+                }
+                else
+                {
+                    item.ItemAmount = count;
+                }
+            }
+        }
+
+        private void AddBeverage_Click_1(object sender, EventArgs e)
+        {
+            double price = 0;
+            foreach (var beverage in beverages)
+            {
+                price = beverage.ItemPrice * beverage.ItemAmount;
+                Program.CartItems.Add(new MenuItem(beverage.ItemAmount, price, beverage.ItemName, beverage.ItemSize));
+                richTextBox1.AppendText($"{beverage.ItemName} {beverage.ItemSize.ToString()} Qty: {beverage.ItemAmount} \t ${price} \n");
+            }
+        }
+
+        private void AddSides(object sender, EventArgs e)
+        {
+            if (cookieCount > 0)
+            {
+                Program.CartItems.Add(new MenuItem(cookieCount, Properties.Settings.Default.CookiePrice, "Cookie", ItemSize.Medium));
+                richTextBox1.AppendText($"Cookie  Qty: {cookieCount} \t ${Properties.Settings.Default.CookiePrice * cookieCount} \n");
+            }
+
+            if (breadStickCount > 0)
+            {
+                Program.CartItems.Add(new MenuItem(breadStickCount, Properties.Settings.Default.BreadsticksPrice, "Breadstick", ItemSize.Medium));
+                richTextBox1.AppendText($"Breadstick  Qty: {breadStickCount} \t ${Properties.Settings.Default.BreadsticksPrice * breadStickCount} \n");
+            }
+
+            if (breadStickBiteCount > 0)
+            {
+                Program.CartItems.Add(new MenuItem(breadStickBiteCount, Properties.Settings.Default.BreadstickBitesPrice, "Breadstick Bite", ItemSize.Medium));
+                richTextBox1.AppendText($"Breadstick Bite  Qty: {breadStickBiteCount} \t ${Properties.Settings.Default.BreadstickBitesPrice * breadStickBiteCount} \n");
+            }
+        }
+
+        private void CookieChange(object sender, EventArgs e)
+        {
+            cookieCount = (int)(sender as NumericUpDown).Value;
+        }
+
+        private void BreadStickChange(object sender, EventArgs e)
+        {
+            breadStickCount = (int)(sender as NumericUpDown).Value;
+        }
+
+        private void BreadStickBiteChange(object sender, EventArgs e)
+        {
+            breadStickBiteCount = (int)(sender as NumericUpDown).Value;
         }
     }
 }

@@ -146,12 +146,12 @@ namespace PizzaProject.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("4")]
-        public double Breadsticks {
+        public double BreadsticksPrice {
             get {
-                return ((double)(this["Breadsticks"]));
+                return ((double)(this["BreadsticksPrice"]));
             }
             set {
-                this["Breadsticks"] = value;
+                this["BreadsticksPrice"] = value;
             }
         }
         

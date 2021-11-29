@@ -59,7 +59,7 @@ namespace PizzaProject
 
         private void PizzaSizeButton_Changed(object sender, EventArgs e)
         {
-            switch((sender as RadioButton).Text)
+            switch((sender as RadioButton).Tag)
             {
                 case "Small":
                     pizzaSelected = ItemSize.Small;
@@ -110,6 +110,11 @@ namespace PizzaProject
                     crustSelected = CrustChoice.Pan;
                     break;
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

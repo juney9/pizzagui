@@ -19,6 +19,7 @@ namespace PizzaProject
         Large,
         ExtraLarge
     }
+
     public class MenuItem
     {
         public const int beveragePrice = 1;

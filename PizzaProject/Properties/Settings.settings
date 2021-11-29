@@ -32,7 +32,7 @@
     <Setting Name="CookiePrice" Type="System.Double" Scope="User">
       <Value Profile="(Default)">4</Value>
     </Setting>
-    <Setting Name="Breadsticks" Type="System.Double" Scope="User">
+    <Setting Name="BreadsticksPrice" Type="System.Double" Scope="User">
       <Value Profile="(Default)">4</Value>
     </Setting>
     <Setting Name="BreadstickBitesPrice" Type="System.Double" Scope="User">

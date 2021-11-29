@@ -22,21 +22,18 @@ namespace PizzaProject
 
     public class MenuItem
     {
-        public const int beveragePrice = 1;
         public int ItemAmount { get; set; }
         public double ItemPrice { get; set; }
         public string ItemName { get; set; }
         public ItemSize ItemSize { get; set; }
         public CrustChoice CrustName { get; set; }
 
-        public MenuItem(int itemAmount = 0, double itemPrice = 0, string itemName = "default", ItemSize itemSize = ItemSize.Medium,
-        CrustChoice crustName = CrustChoice.Regular)
+        public MenuItem(int itemAmount = 0, double itemPrice = 0, string itemName = "default", ItemSize itemSize = ItemSize.Medium)
         {
             ItemAmount = itemAmount;
             ItemPrice = itemPrice;
             ItemName = itemName;
             ItemSize = itemSize;
-            CrustName = crustName;
             //toppings later
         }
     }

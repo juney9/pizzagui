@@ -104,6 +104,8 @@ namespace PizzaProject
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).BeginInit();
@@ -137,13 +139,13 @@ namespace PizzaProject
             // 
             // Carbutton
             // 
-            this.Carbutton.Location = new System.Drawing.Point(273, 849);
+            this.Carbutton.Location = new System.Drawing.Point(35, 407);
             this.Carbutton.Name = "Carbutton";
             this.Carbutton.Size = new System.Drawing.Size(110, 40);
             this.Carbutton.TabIndex = 1;
-            this.Carbutton.Text = "Add To Cart";
+            this.Carbutton.Text = "Add Pizza";
             this.Carbutton.UseVisualStyleBackColor = true;
-            this.Carbutton.Click += new System.EventHandler(this.Carbutton_Click);
+            this.Carbutton.Click += new System.EventHandler(this.AddPizza_Click);
             // 
             // label1
             // 
@@ -151,7 +153,7 @@ namespace PizzaProject
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(703, 48);
+            this.label1.Location = new System.Drawing.Point(678, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 16);
             this.label1.TabIndex = 3;
@@ -434,7 +436,7 @@ namespace PizzaProject
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(417, 849);
+            this.button2.Location = new System.Drawing.Point(605, 741);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 40);
             this.button2.TabIndex = 28;
@@ -443,9 +445,9 @@ namespace PizzaProject
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(706, 67);
+            this.richTextBox1.Location = new System.Drawing.Point(681, 67);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(149, 308);
+            this.richTextBox1.Size = new System.Drawing.Size(202, 365);
             this.richTextBox1.TabIndex = 29;
             this.richTextBox1.Text = "";
             // 
@@ -455,6 +457,8 @@ namespace PizzaProject
             this.numericUpDown22.Name = "numericUpDown22";
             this.numericUpDown22.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown22.TabIndex = 95;
+            this.numericUpDown22.Tag = "Lemonade";
+            this.numericUpDown22.ValueChanged += new System.EventHandler(this.BeverageLarge_ValueChanged);
             // 
             // numericUpDown23
             // 
@@ -462,6 +466,8 @@ namespace PizzaProject
             this.numericUpDown23.Name = "numericUpDown23";
             this.numericUpDown23.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown23.TabIndex = 94;
+            this.numericUpDown23.Tag = "Lemonade";
+            this.numericUpDown23.ValueChanged += new System.EventHandler(this.BeverageMedium_ValueChanged);
             // 
             // numericUpDown24
             // 
@@ -469,6 +475,8 @@ namespace PizzaProject
             this.numericUpDown24.Name = "numericUpDown24";
             this.numericUpDown24.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown24.TabIndex = 93;
+            this.numericUpDown24.Tag = "Lemonade";
+            this.numericUpDown24.ValueChanged += new System.EventHandler(this.BeverageSmall_ValueChanged);
             // 
             // numericUpDown25
             // 
@@ -476,6 +484,8 @@ namespace PizzaProject
             this.numericUpDown25.Name = "numericUpDown25";
             this.numericUpDown25.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown25.TabIndex = 92;
+            this.numericUpDown25.Tag = "SierraMist";
+            this.numericUpDown25.ValueChanged += new System.EventHandler(this.BeverageLarge_ValueChanged);
             // 
             // numericUpDown26
             // 
@@ -483,6 +493,8 @@ namespace PizzaProject
             this.numericUpDown26.Name = "numericUpDown26";
             this.numericUpDown26.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown26.TabIndex = 91;
+            this.numericUpDown26.Tag = "SierraMist";
+            this.numericUpDown26.ValueChanged += new System.EventHandler(this.BeverageMedium_ValueChanged);
             // 
             // numericUpDown27
             // 
@@ -490,6 +502,8 @@ namespace PizzaProject
             this.numericUpDown27.Name = "numericUpDown27";
             this.numericUpDown27.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown27.TabIndex = 90;
+            this.numericUpDown27.Tag = "SierraMist";
+            this.numericUpDown27.ValueChanged += new System.EventHandler(this.BeverageSmall_ValueChanged);
             // 
             // numericUpDown16
             // 
@@ -497,6 +511,8 @@ namespace PizzaProject
             this.numericUpDown16.Name = "numericUpDown16";
             this.numericUpDown16.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown16.TabIndex = 89;
+            this.numericUpDown16.Tag = "DietOrange";
+            this.numericUpDown16.ValueChanged += new System.EventHandler(this.BeverageLarge_ValueChanged);
             // 
             // numericUpDown17
             // 
@@ -504,6 +520,8 @@ namespace PizzaProject
             this.numericUpDown17.Name = "numericUpDown17";
             this.numericUpDown17.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown17.TabIndex = 88;
+            this.numericUpDown17.Tag = "DietOrange";
+            this.numericUpDown17.ValueChanged += new System.EventHandler(this.BeverageMedium_ValueChanged);
             // 
             // numericUpDown18
             // 
@@ -511,6 +529,8 @@ namespace PizzaProject
             this.numericUpDown18.Name = "numericUpDown18";
             this.numericUpDown18.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown18.TabIndex = 87;
+            this.numericUpDown18.Tag = "DietOrange";
+            this.numericUpDown18.ValueChanged += new System.EventHandler(this.BeverageSmall_ValueChanged);
             // 
             // numericUpDown19
             // 
@@ -518,6 +538,8 @@ namespace PizzaProject
             this.numericUpDown19.Name = "numericUpDown19";
             this.numericUpDown19.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown19.TabIndex = 86;
+            this.numericUpDown19.Tag = "Orange";
+            this.numericUpDown19.ValueChanged += new System.EventHandler(this.BeverageLarge_ValueChanged);
             // 
             // numericUpDown20
             // 
@@ -525,6 +547,8 @@ namespace PizzaProject
             this.numericUpDown20.Name = "numericUpDown20";
             this.numericUpDown20.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown20.TabIndex = 85;
+            this.numericUpDown20.Tag = "Orange";
+            this.numericUpDown20.ValueChanged += new System.EventHandler(this.BeverageMedium_ValueChanged);
             // 
             // numericUpDown21
             // 
@@ -532,6 +556,8 @@ namespace PizzaProject
             this.numericUpDown21.Name = "numericUpDown21";
             this.numericUpDown21.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown21.TabIndex = 84;
+            this.numericUpDown21.Tag = "Orange";
+            this.numericUpDown21.ValueChanged += new System.EventHandler(this.BeverageSmall_ValueChanged);
             // 
             // numericUpDown10
             // 
@@ -539,6 +565,8 @@ namespace PizzaProject
             this.numericUpDown10.Name = "numericUpDown10";
             this.numericUpDown10.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown10.TabIndex = 83;
+            this.numericUpDown10.Tag = "DietRootBeer";
+            this.numericUpDown10.ValueChanged += new System.EventHandler(this.BeverageLarge_ValueChanged);
             // 
             // numericUpDown11
             // 
@@ -546,6 +574,8 @@ namespace PizzaProject
             this.numericUpDown11.Name = "numericUpDown11";
             this.numericUpDown11.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown11.TabIndex = 82;
+            this.numericUpDown11.Tag = "DietRootBeer";
+            this.numericUpDown11.ValueChanged += new System.EventHandler(this.BeverageMedium_ValueChanged);
             // 
             // numericUpDown12
             // 
@@ -553,6 +583,8 @@ namespace PizzaProject
             this.numericUpDown12.Name = "numericUpDown12";
             this.numericUpDown12.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown12.TabIndex = 81;
+            this.numericUpDown12.Tag = "DietRootBeer";
+            this.numericUpDown12.ValueChanged += new System.EventHandler(this.BeverageSmall_ValueChanged);
             // 
             // numericUpDown13
             // 
@@ -560,6 +592,8 @@ namespace PizzaProject
             this.numericUpDown13.Name = "numericUpDown13";
             this.numericUpDown13.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown13.TabIndex = 80;
+            this.numericUpDown13.Tag = "RootBeer";
+            this.numericUpDown13.ValueChanged += new System.EventHandler(this.BeverageLarge_ValueChanged);
             // 
             // numericUpDown14
             // 
@@ -567,6 +601,8 @@ namespace PizzaProject
             this.numericUpDown14.Name = "numericUpDown14";
             this.numericUpDown14.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown14.TabIndex = 79;
+            this.numericUpDown14.Tag = "RootBeer";
+            this.numericUpDown14.ValueChanged += new System.EventHandler(this.BeverageMedium_ValueChanged);
             // 
             // numericUpDown15
             // 
@@ -574,6 +610,8 @@ namespace PizzaProject
             this.numericUpDown15.Name = "numericUpDown15";
             this.numericUpDown15.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown15.TabIndex = 78;
+            this.numericUpDown15.Tag = "RootBeer";
+            this.numericUpDown15.ValueChanged += new System.EventHandler(this.BeverageSmall_ValueChanged);
             // 
             // numericUpDown9
             // 
@@ -581,6 +619,8 @@ namespace PizzaProject
             this.numericUpDown9.Name = "numericUpDown9";
             this.numericUpDown9.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown9.TabIndex = 77;
+            this.numericUpDown9.Tag = "DietPepsi";
+            this.numericUpDown9.ValueChanged += new System.EventHandler(this.BeverageLarge_ValueChanged);
             // 
             // numericUpDown8
             // 
@@ -588,6 +628,8 @@ namespace PizzaProject
             this.numericUpDown8.Name = "numericUpDown8";
             this.numericUpDown8.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown8.TabIndex = 76;
+            this.numericUpDown8.Tag = "DietPepsi";
+            this.numericUpDown8.ValueChanged += new System.EventHandler(this.BeverageMedium_ValueChanged);
             // 
             // numericUpDown7
             // 
@@ -595,6 +637,8 @@ namespace PizzaProject
             this.numericUpDown7.Name = "numericUpDown7";
             this.numericUpDown7.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown7.TabIndex = 75;
+            this.numericUpDown7.Tag = "DietPepsi";
+            this.numericUpDown7.ValueChanged += new System.EventHandler(this.BeverageSmall_ValueChanged);
             // 
             // numericUpDown6
             // 
@@ -602,6 +646,8 @@ namespace PizzaProject
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown6.TabIndex = 74;
+            this.numericUpDown6.Tag = "Pepsi";
+            this.numericUpDown6.ValueChanged += new System.EventHandler(this.BeverageLarge_ValueChanged);
             // 
             // numericUpDown5
             // 
@@ -609,6 +655,8 @@ namespace PizzaProject
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown5.TabIndex = 73;
+            this.numericUpDown5.Tag = "Pepsi";
+            this.numericUpDown5.ValueChanged += new System.EventHandler(this.BeverageMedium_ValueChanged);
             // 
             // numericUpDown4
             // 
@@ -616,6 +664,8 @@ namespace PizzaProject
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown4.TabIndex = 72;
+            this.numericUpDown4.Tag = "Pepsi";
+            this.numericUpDown4.ValueChanged += new System.EventHandler(this.BeverageSmall_ValueChanged);
             // 
             // label21
             // 
@@ -878,6 +928,7 @@ namespace PizzaProject
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown3.TabIndex = 50;
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.BreadStickBiteChange);
             // 
             // numericUpDown2
             // 
@@ -885,6 +936,7 @@ namespace PizzaProject
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown2.TabIndex = 49;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.BreadStickChange);
             // 
             // numericUpDown1
             // 
@@ -892,6 +944,7 @@ namespace PizzaProject
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(29, 20);
             this.numericUpDown1.TabIndex = 48;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.CookieChange);
             // 
             // label26
             // 
@@ -917,12 +970,34 @@ namespace PizzaProject
             this.label27.TabIndex = 97;
             this.label27.Text = "Any size $1 each";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(280, 741);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 40);
+            this.button1.TabIndex = 98;
+            this.button1.Text = "Add Beverages";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.AddBeverage_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(31, 741);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(110, 40);
+            this.button3.TabIndex = 99;
+            this.button3.Text = "Add Sides";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.AddSides);
+            // 
             // pizzaOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(912, 918);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.numericUpDown22);
@@ -1105,5 +1180,7 @@ namespace PizzaProject
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

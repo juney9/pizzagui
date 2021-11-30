@@ -6,12 +6,6 @@ using System.Threading.Tasks;
 
 namespace PizzaProject
 {
-    public enum CrustChoice
-    {
-        Thin,
-        Regular,
-        Pan
-    }
     public enum ItemSize
     {
         Small,
@@ -26,15 +20,23 @@ namespace PizzaProject
         public double ItemPrice { get; set; }
         public string ItemName { get; set; }
         public ItemSize ItemSize { get; set; }
-        public CrustChoice CrustName { get; set; }
+        public virtual string DisplayString() 
+        {
+            return $"{ItemName}";
+        }
 
-        public MenuItem(int itemAmount = 0, double itemPrice = 0, string itemName = "default", ItemSize itemSize = ItemSize.Medium)
+        public MenuItem(int itemAmount = 0, double itemPrice = 0, string itemName = "", ItemSize itemSize = ItemSize.Medium)
         {
             ItemAmount = itemAmount;
             ItemPrice = itemPrice;
             ItemName = itemName;
             ItemSize = itemSize;
             //toppings later
+        }
+
+        public virtual Dictionary<string, bool> DisplayChildrenStrings()
+        {
+            return null;
         }
     }
 }

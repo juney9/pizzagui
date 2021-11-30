@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Beverage.cs" />
     <Compile Include="checkout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +60,7 @@
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuItem.cs" />
+    <Compile Include="Pizza.cs" />
     <Compile Include="pizzaOrder.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -12,6 +12,7 @@ namespace PizzaProject
 {
     public partial class pizzaOrder : Form
     {
+        public static pizzaOrder pizzaOrderForm = new pizzaOrder();
         private ItemSize pizzaSelected;
         private double pizzaPrice = 0;
         private double toppingPrice = 0;
@@ -53,8 +54,13 @@ namespace PizzaProject
 
         private void AddPizza_Click(object sender, EventArgs e)
         {
-            Program.CartItems.Add(new MenuItem(1,totalPrice,"Pizza " + crustSelected.ToString(), pizzaSelected));
+            Program.CartItems.Add(new Pizza(1,totalPrice,"Pizza ", pizzaSelected, crustSelected, dictToppings));
             richTextBox1.AppendText($"Pizza {pizzaSelected.ToString()} {crustSelected.ToString()} \t ${totalPrice.ToString()} \n" );
+            var listOfToppings = dictToppings.Where(kv => kv.Value == true).ToList();
+            foreach(var topping in listOfToppings)
+            {
+                richTextBox1.AppendText("    " + topping.Key + "\n");
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -125,11 +131,10 @@ namespace PizzaProject
         private void BeverageSmall_ValueChanged(object sender, EventArgs e)
         {
             var count = ((int)(sender as NumericUpDown).Value);
-
             var item = beverages.Where(b => b.ItemName == (sender as NumericUpDown).Tag as string && b.ItemSize == ItemSize.Small).FirstOrDefault();
             if (item == null)
             {
-                beverages.Add(new MenuItem(count, Properties.Settings.Default.BeveragePrice, (sender as NumericUpDown).Tag as string,
+                beverages.Add(new Beverage(count, Properties.Settings.Default.BeveragePrice, (sender as NumericUpDown).Tag as string,
                     ItemSize.Small));
             }
             else
@@ -152,7 +157,7 @@ namespace PizzaProject
             var item = beverages.Where(b => b.ItemName == (sender as NumericUpDown).Tag as string && b.ItemSize == ItemSize.Medium).FirstOrDefault();
             if (item == null)
             {
-                beverages.Add(new MenuItem(count, Properties.Settings.Default.BeveragePrice, (sender as NumericUpDown).Tag as string,
+                beverages.Add(new Beverage(count, Properties.Settings.Default.BeveragePrice, (sender as NumericUpDown).Tag as string,
                     ItemSize.Medium));
             }
             else
@@ -175,7 +180,7 @@ namespace PizzaProject
             var item = beverages.Where(b => b.ItemName == (sender as NumericUpDown).Tag as string && b.ItemSize == ItemSize.Large).FirstOrDefault();
             if (item == null)
             {
-                beverages.Add(new MenuItem(count, Properties.Settings.Default.BeveragePrice, (sender as NumericUpDown).Tag as string,
+                beverages.Add(new Beverage(count, Properties.Settings.Default.BeveragePrice, (sender as NumericUpDown).Tag as string,
                     ItemSize.Large));
             }
             else
@@ -197,7 +202,7 @@ namespace PizzaProject
             foreach (var beverage in beverages)
             {
                 price = beverage.ItemPrice * beverage.ItemAmount;
-                Program.CartItems.Add(new MenuItem(beverage.ItemAmount, price, beverage.ItemName, beverage.ItemSize));
+                Program.CartItems.Add(new Beverage(beverage.ItemAmount, price, beverage.ItemName, beverage.ItemSize));
                 richTextBox1.AppendText($"{beverage.ItemName} {beverage.ItemSize.ToString()} Qty: {beverage.ItemAmount} \t ${price} \n");
             }
         }
@@ -206,19 +211,19 @@ namespace PizzaProject
         {
             if (cookieCount > 0)
             {
-                Program.CartItems.Add(new MenuItem(cookieCount, Properties.Settings.Default.CookiePrice, "Cookie", ItemSize.Medium));
+                Program.CartItems.Add(new MenuItem(cookieCount, Properties.Settings.Default.CookiePrice * cookieCount, "Cookie", ItemSize.Medium));
                 richTextBox1.AppendText($"Cookie  Qty: {cookieCount} \t ${Properties.Settings.Default.CookiePrice * cookieCount} \n");
             }
 
             if (breadStickCount > 0)
             {
-                Program.CartItems.Add(new MenuItem(breadStickCount, Properties.Settings.Default.BreadsticksPrice, "Breadstick", ItemSize.Medium));
+                Program.CartItems.Add(new MenuItem(breadStickCount, Properties.Settings.Default.BreadsticksPrice * breadStickCount, "Breadstick", ItemSize.Medium));
                 richTextBox1.AppendText($"Breadstick  Qty: {breadStickCount} \t ${Properties.Settings.Default.BreadsticksPrice * breadStickCount} \n");
             }
 
             if (breadStickBiteCount > 0)
             {
-                Program.CartItems.Add(new MenuItem(breadStickBiteCount, Properties.Settings.Default.BreadstickBitesPrice, "Breadstick Bite", ItemSize.Medium));
+                Program.CartItems.Add(new MenuItem(breadStickBiteCount, Properties.Settings.Default.BreadstickBitesPrice *breadStickBiteCount, "Breadstick Bite", ItemSize.Medium));
                 richTextBox1.AppendText($"Breadstick Bite  Qty: {breadStickBiteCount} \t ${Properties.Settings.Default.BreadstickBitesPrice * breadStickBiteCount} \n");
             }
         }
@@ -236,6 +241,13 @@ namespace PizzaProject
         private void BreadStickBiteChange(object sender, EventArgs e)
         {
             breadStickBiteCount = (int)(sender as NumericUpDown).Value;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            checkout.checkoutForm.Init();
+            checkout.checkoutForm.Show();
         }
     }
 }

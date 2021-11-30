@@ -21,8 +21,7 @@ namespace PizzaProject
         {
             //Conditions need to be added. Lines 23 - 25 switch load Form2 and vise versa.
             this.Hide();
-            pizzaOrder f2 = new pizzaOrder();
-            f2.ShowDialog();
+            pizzaOrder.pizzaOrderForm.ShowDialog();
         }
     }
 }

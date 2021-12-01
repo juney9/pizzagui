@@ -19,14 +19,6 @@ namespace PizzaProject
         {
             InitializeComponent();
         }
-        
-        string userInfoPath = Environment.CurrentDirectory + "userinfo.txt";
-        private void Login_Load(object sender, EventArgs e)
-        {
-            
-            
-
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             StreamReader sr = new StreamReader("userinfo.txt");

@@ -75,6 +75,7 @@ namespace PizzaProject
         private void Confirm_Click(object sender, EventArgs e)
         {
             this.Hide();
+            receipt.receiptForm = new receipt();
             receipt.receiptForm.Show();
         }
 

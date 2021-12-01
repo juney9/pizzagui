@@ -12,11 +12,12 @@ namespace PizzaProject
 {
     public partial class receipt : Form
     {
+
         public static receipt receiptForm = new receipt();
+
         public receipt()
         {
             InitializeComponent();
-
             listView1.Items.Clear();
             double totalPrice = 0;
             foreach (var cartItem in Program.CartItems)
@@ -41,6 +42,7 @@ namespace PizzaProject
                         }
                     }
                 }
+
             }
 
             ListViewItem itemSpace = new ListViewItem();
@@ -80,7 +82,7 @@ namespace PizzaProject
             checkout.checkoutForm.Close();
             pizzaOrder.pizzaOrderForm = new pizzaOrder();
             checkout.checkoutForm = new checkout();
-            receipt.receiptForm = new receipt();
+            receipt.receiptForm.Close();
             this.Hide();
             pizzaOrder.pizzaOrderForm.Show();
         }

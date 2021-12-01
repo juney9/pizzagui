@@ -14,7 +14,7 @@ namespace PizzaProject
     {
         public static pizzaOrder pizzaOrderForm = new pizzaOrder();
         private ItemSize pizzaSelected;
-        private double pizzaPrice = 6;
+        private double pizzaPrice = 0;
         private double toppingPrice = 0;
         private double totalPrice = 0;
         private CrustChoice crustSelected;
@@ -24,9 +24,14 @@ namespace PizzaProject
         private int breadStickCount = 0;
         private int breadStickBiteCount = 0;
 
+
         public pizzaOrder()
         {
             InitializeComponent();
+            pizzaSelected = ItemSize.Medium;
+            pizzaPrice = Properties.Settings.Default.MediumPizzaPrice;
+            toppingPrice = Properties.Settings.Default.MediumToppingPrice;
+            calculatePrice();
         }
 
         private void button1_Click(object sender, EventArgs e)

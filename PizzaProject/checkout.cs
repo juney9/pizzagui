@@ -63,13 +63,13 @@ namespace PizzaProject
             ListViewItem Tax = new ListViewItem();
             Tax.Text = "Tax";
             Tax.SubItems.Add("");
-            Tax.SubItems.Add('$' + (totalPrice * .06).ToString());
+            Tax.SubItems.Add('$' + Math.Round((totalPrice * .06),2).ToString());
             listView1.Items.Add(Tax);
 
             ListViewItem itemTotal = new ListViewItem();
             itemTotal.Text = "Total";
             itemTotal.SubItems.Add("");
-            itemTotal.SubItems.Add('$' + (totalPrice *1.06).ToString());
+            itemTotal.SubItems.Add('$' + Math.Round((totalPrice *1.06),2).ToString());
             listView1.Items.Add(itemTotal);
         }
         private void Confirm_Click(object sender, EventArgs e)

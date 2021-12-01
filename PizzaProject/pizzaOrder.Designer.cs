@@ -155,7 +155,7 @@ namespace PizzaProject
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(678, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 16);
+            this.label1.Size = new System.Drawing.Size(100, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Items in Cart :";
             // 
@@ -178,9 +178,8 @@ namespace PizzaProject
             this.radioButton6.ForeColor = System.Drawing.SystemColors.Control;
             this.radioButton6.Location = new System.Drawing.Point(291, 15);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(53, 20);
+            this.radioButton6.Size = new System.Drawing.Size(52, 20);
             this.radioButton6.TabIndex = 11;
-            this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Pan";
             this.radioButton6.UseVisualStyleBackColor = true;
             this.radioButton6.CheckedChanged += new System.EventHandler(this.CrustButton_Changed);
@@ -188,11 +187,12 @@ namespace PizzaProject
             // radioButton7
             // 
             this.radioButton7.AutoSize = true;
+            this.radioButton7.Checked = true;
             this.radioButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton7.ForeColor = System.Drawing.SystemColors.Control;
             this.radioButton7.Location = new System.Drawing.Point(142, 15);
             this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(81, 20);
+            this.radioButton7.Size = new System.Drawing.Size(80, 20);
             this.radioButton7.TabIndex = 10;
             this.radioButton7.TabStop = true;
             this.radioButton7.Text = "Regular";
@@ -206,9 +206,8 @@ namespace PizzaProject
             this.radioButton8.ForeColor = System.Drawing.SystemColors.Control;
             this.radioButton8.Location = new System.Drawing.Point(21, 15);
             this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(56, 20);
+            this.radioButton8.Size = new System.Drawing.Size(55, 20);
             this.radioButton8.TabIndex = 9;
-            this.radioButton8.TabStop = true;
             this.radioButton8.Text = "Thin";
             this.radioButton8.UseVisualStyleBackColor = true;
             this.radioButton8.CheckedChanged += new System.EventHandler(this.CrustButton_Changed);
@@ -220,9 +219,8 @@ namespace PizzaProject
             this.radioButton4.ForeColor = System.Drawing.Color.Transparent;
             this.radioButton4.Location = new System.Drawing.Point(431, 10);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(108, 20);
+            this.radioButton4.Size = new System.Drawing.Size(107, 20);
             this.radioButton4.TabIndex = 15;
-            this.radioButton4.TabStop = true;
             this.radioButton4.Tag = "X-Large";
             this.radioButton4.Text = "X-Large $10";
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -235,9 +233,8 @@ namespace PizzaProject
             this.radioButton3.ForeColor = System.Drawing.SystemColors.Control;
             this.radioButton3.Location = new System.Drawing.Point(290, 10);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(86, 20);
+            this.radioButton3.Size = new System.Drawing.Size(85, 20);
             this.radioButton3.TabIndex = 14;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Tag = "Large";
             this.radioButton3.Text = "Large $8";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -246,11 +243,12 @@ namespace PizzaProject
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.SystemColors.Control;
             this.radioButton2.Location = new System.Drawing.Point(141, 10);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(100, 20);
+            this.radioButton2.Size = new System.Drawing.Size(99, 20);
             this.radioButton2.TabIndex = 13;
             this.radioButton2.TabStop = true;
             this.radioButton2.Tag = "Medium";
@@ -266,9 +264,8 @@ namespace PizzaProject
             this.radioButton1.ForeColor = System.Drawing.SystemColors.Control;
             this.radioButton1.Location = new System.Drawing.Point(16, 10);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 20);
+            this.radioButton1.Size = new System.Drawing.Size(84, 20);
             this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Tag = "Small";
             this.radioButton1.Text = "Small $4";
             this.radioButton1.UseVisualStyleBackColor = false;
@@ -306,7 +303,7 @@ namespace PizzaProject
             this.checkBox1.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox1.Location = new System.Drawing.Point(35, 327);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(99, 20);
+            this.checkBox1.Size = new System.Drawing.Size(98, 20);
             this.checkBox1.TabIndex = 18;
             this.checkBox1.Text = "Pepperoni";
             this.checkBox1.UseVisualStyleBackColor = false;
@@ -320,7 +317,7 @@ namespace PizzaProject
             this.checkBox2.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox2.Location = new System.Drawing.Point(135, 327);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(89, 20);
+            this.checkBox2.Size = new System.Drawing.Size(88, 20);
             this.checkBox2.TabIndex = 19;
             this.checkBox2.Text = "Sausage";
             this.checkBox2.UseVisualStyleBackColor = false;
@@ -334,7 +331,7 @@ namespace PizzaProject
             this.checkBox3.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox3.Location = new System.Drawing.Point(240, 327);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(59, 20);
+            this.checkBox3.Size = new System.Drawing.Size(58, 20);
             this.checkBox3.TabIndex = 20;
             this.checkBox3.Text = "Ham";
             this.checkBox3.UseVisualStyleBackColor = false;
@@ -348,7 +345,7 @@ namespace PizzaProject
             this.checkBox4.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox4.Location = new System.Drawing.Point(338, 327);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(132, 20);
+            this.checkBox4.Size = new System.Drawing.Size(131, 20);
             this.checkBox4.TabIndex = 21;
             this.checkBox4.Text = "Green Peppers";
             this.checkBox4.UseVisualStyleBackColor = false;
@@ -362,7 +359,7 @@ namespace PizzaProject
             this.checkBox5.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox5.Location = new System.Drawing.Point(338, 370);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(75, 20);
+            this.checkBox5.Size = new System.Drawing.Size(74, 20);
             this.checkBox5.TabIndex = 22;
             this.checkBox5.Text = "Onions";
             this.checkBox5.UseVisualStyleBackColor = false;
@@ -376,7 +373,7 @@ namespace PizzaProject
             this.checkBox6.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox6.Location = new System.Drawing.Point(35, 370);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(98, 20);
+            this.checkBox6.Size = new System.Drawing.Size(97, 20);
             this.checkBox6.TabIndex = 23;
             this.checkBox6.Text = "Pineapple";
             this.checkBox6.UseVisualStyleBackColor = false;
@@ -390,7 +387,7 @@ namespace PizzaProject
             this.checkBox7.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox7.Location = new System.Drawing.Point(135, 370);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(98, 20);
+            this.checkBox7.Size = new System.Drawing.Size(97, 20);
             this.checkBox7.TabIndex = 24;
             this.checkBox7.Text = "Mushroom";
             this.checkBox7.UseVisualStyleBackColor = false;
@@ -404,7 +401,7 @@ namespace PizzaProject
             this.checkBox8.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox8.Location = new System.Drawing.Point(240, 370);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(80, 20);
+            this.checkBox8.Size = new System.Drawing.Size(79, 20);
             this.checkBox8.TabIndex = 25;
             this.checkBox8.Text = "Tomato";
             this.checkBox8.UseVisualStyleBackColor = false;
@@ -955,7 +952,7 @@ namespace PizzaProject
             this.label26.ForeColor = System.Drawing.SystemColors.Control;
             this.label26.Location = new System.Drawing.Point(202, 297);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(439, 16);
+            this.label26.Size = new System.Drawing.Size(438, 16);
             this.label26.TabIndex = 96;
             this.label26.Text = "Per topping Small $.50   Medium $.75   Large $1   X-Large $1.25";
             // 

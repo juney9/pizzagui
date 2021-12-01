@@ -14,7 +14,7 @@ namespace PizzaProject
     {
         public static pizzaOrder pizzaOrderForm = new pizzaOrder();
         private ItemSize pizzaSelected;
-        private double pizzaPrice = 0;
+        private double pizzaPrice = 6;
         private double toppingPrice = 0;
         private double totalPrice = 0;
         private CrustChoice crustSelected;

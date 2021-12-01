@@ -13,17 +13,35 @@ namespace PizzaProject
 {
     public partial class login : Form
     {
+        List<string> userList = new List<string>();
+        List<string> userPass = new List<string>();
         public login()
         {
             InitializeComponent();
         }
-
-        List<string> users = new List<string>();
-        List<string> pass = new List<string>();
-        private void button1_Click(object sender, EventArgs e)
+        
+        string userInfoPath = Environment.CurrentDirectory + "userinfo.txt";
+        private void Login_Load(object sender, EventArgs e)
         {
             
-            if (users.Contains(textBox1.Text) && pass.Contains(textBox2.Text) && Array.IndexOf(users.ToArray(), textBox1.Text) == Array.IndexOf(pass.ToArray(), textBox2.Text))
+            
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StreamReader sr = new StreamReader("userinfo.txt");
+            string line;
+            bool loginSuccess=false;
+            while ((line = sr.ReadLine()) != null)
+            {
+                var components = line.Split(',');
+                if (textBox1.Text == components[0] && textBox2.Text == components[1])
+                {
+                    loginSuccess= true;
+                    break;
+                }
+            }
+            if (loginSuccess==true)
             {
                 this.Hide();
                 pizzaOrder.pizzaOrderForm.ShowDialog();
@@ -31,16 +49,6 @@ namespace PizzaProject
             else
                 MessageBox.Show("The UserID and/or password is incorrect");
         }
-            private void login_Load (object sender, EventArgs e)
-        {
-            StreamReader sr = new StreamReader("userinfo.txt");
-            string line = "";
-            while ((line==sr.ReadLine()) != null)
-            {
-                string [] components = line.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                users.Add(components[0]);
-                pass.Add(components[1]);
-            }
-        }
-        }
+        
     }
+}
